@@ -8,6 +8,7 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&family=Outfit:wght@300;400;500&family=Cormorant+Garamond:ital,wght@1,300;1,400&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
+<link rel="icon" href="https://fav.farm/%E2%9C%85" />
 </head>
 <body>
 
@@ -32,7 +33,7 @@
     <div class="blob blob-3"></div>
   </div>
   <div class="hero-overline">Full-Stack Developer &nbsp;·&nbsp; Open to Opportunities</div>
-  <h1 class="hero-name">Vincent<br /><span class="last">Ma.</span></h1>
+  <h1 class="hero-name">Vincent<br /><span class="last">Ma</span></h1>
   <div class="hero-bottom">
     <p class="hero-desc">I build <strong>beautiful, functional systems</strong> — from database to pixel. Crafting web experiences that feel alive and work flawlessly.</p>
     <div style="text-align:right">
@@ -48,7 +49,7 @@
     "I believe code is a craft — every function, every component should be written with the same care as <em>a brushstroke on canvas.</em>"
   </div>
   <div class="about-meta">
-    <div class="about-meta-item"><label>Based in</label><span>Toronto, Canada</span></div>
+    <div class="about-meta-item"><label>Based in</label><span>Markham, Ontario</span></div>
     <div class="about-meta-item"><label>Speciality</label><span>Full-Stack Development</span></div>
     <div class="about-meta-item"><label>Available</label><span>Q2 2026</span></div>
   </div>
@@ -101,7 +102,7 @@
       <div class="proj-title">Developer Travel Guide Homepage</div>
       <div class="proj-desc">A responsive developer focused travel guide homepage featuring an interactive layout, dynamic location‑based content sections, and a clean, modern UI optimized for usability.</div>
       <div class="proj-tags">
-        <span class="proj-tag">React</span><span class="proj-tag">Chrome Extension</span><span class="proj-tag">Firebase</span><span class="proj-tag">Algolia</span>
+        <span class="proj-tag">HTML</span><span class="proj-tag">CSS</span><span class="proj-tag">JavaScript</span><span class="proj-tag">Figma</span>
       </div>
    </div>
     <div class="proj-side"><span class="proj-year">2025</span><a href="https://github.com/vincentmacode/lazydev-workspace-homepage" class="proj-link">GitHub →</a></div>
@@ -149,7 +150,7 @@
 </section>
 
 <!-- EXPERIENCE -->
-<section id="experience">
+<!-- <section id="experience">
   <div class="section-label reveal"><span>iii</span> Experience</div>
 
   <div class="exp-entry reveal">
@@ -187,7 +188,7 @@
       <div class="exp-highlights"><span class="exp-highlight">React</span><span class="exp-highlight">GSAP</span><span class="exp-highlight">Node.js</span></div>
     </div>
   </div>
-</section>
+</section> -->
 
 <!-- CONTACT -->
 <section id="contact">
@@ -199,15 +200,15 @@
       <p class="contact-sub">Whether you have a project in mind, want to collaborate, or just want to say hello — I'd love to hear from you.</p>
     </div>
     <div class="contact-links reveal">
-      <a href="mailto:vincent@example.com" class="contact-link">
-        <div><div class="cl-label">Email</div><div class="cl-handle">vincent@example.com</div></div>
+      <a href="mailto:vincentma.code@gmail.com" class="contact-link">
+        <div><div class="cl-label">Email</div><div class="cl-handle">vincentma.code@gmail.com</div></div>
         <span class="cl-arrow">↗</span>
       </a>
-      <a href="https://github.com" target="_blank" class="contact-link">
-        <div><div class="cl-label">GitHub</div><div class="cl-handle">@vincentma</div></div>
+      <a href="https://github.com/vincentmacode" target="_blank" class="contact-link">
+        <div><div class="cl-label">GitHub</div><div class="cl-handle">@vincentmacode</div></div>
         <span class="cl-arrow">↗</span>
       </a>
-      <a href="https://linkedin.com" target="_blank" class="contact-link">
+      <a href="https://linkedin.com/in/vincentmadev" target="_blank" class="contact-link">
         <div><div class="cl-label">LinkedIn</div><div class="cl-handle">Vincent Ma</div></div>
         <span class="cl-arrow">↗</span>
       </a>
@@ -218,39 +219,11 @@
     </div>
   </div>
 </section>
-
-<footer>
-  <span>© 2025 Vincent Ma</span>
-  <span>Designed & built with care</span>
-  <a href="#hero">Back to top ↑</a>
-</footer>
-
-<script>
-  const dot = document.getElementById('cursorDot');
-  const ring = document.getElementById('cursorRing');
-  let mx = 0, my = 0, rx = 0, ry = 0;
-
-  document.addEventListener('mousemove', e => {
-    mx = e.clientX; my = e.clientY;
-    dot.style.left = mx + 'px'; dot.style.top = my + 'px';
-  });
-
-  (function animRing() {
-    rx += (mx - rx) * 0.12;
-    ry += (my - ry) * 0.12;
-    ring.style.left = rx + 'px'; ring.style.top = ry + 'px';
-    requestAnimationFrame(animRing);
-  })();
-
-  document.querySelectorAll('a, button, .project-row, .exp-entry, .skill-list li').forEach(el => {
-    el.addEventListener('mouseenter', () => ring.classList.add('big'));
-    el.addEventListener('mouseleave', () => ring.classList.remove('big'));
-  });
-
-  const obs = new IntersectionObserver(entries => {
-    entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-  }, { threshold: 0.1 });
-  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
-</script>
+    <footer>
+      <span>© 2026 Vincent Ma</span>
+      <span>Designed & built with care</span>
+      <a href="#hero">Back to top ↑</a>
+    </footer>
+<script src="script.js"></script>
 </body>
 </html>
