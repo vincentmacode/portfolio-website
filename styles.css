@@ -90,7 +90,7 @@ nav {
 @keyframes drift1 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(30px,20px) rotate(10deg); } }
 @keyframes drift2 { 0%,100% { transform: translate(0,0) rotate(0deg); } 50% { transform: translate(-20px,30px) rotate(-8deg); } }
 
-.hero-overline {
+.hero-overline {      
   font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase;
   color: var(--muted); margin-bottom: 1.5rem;
   display: flex; align-items: center; gap: 1rem;
