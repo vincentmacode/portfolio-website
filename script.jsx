@@ -1,17 +1,15 @@
 import { useState, useEffect, useRef } from 'react'
 import { createRoot } from 'react-dom/client'
-import * as THREE from 'three'
-import 'vanta/dist/vanta.birds.min'
 
 function VantaBirds() {
   const [vantaEffect, setVantaEffect] = useState(null)
   const vantaRef = useRef(null)
 
   useEffect(() => {
-    if (!vantaEffect) {
+    if (!vantaEffect && window.VANTA) {
       setVantaEffect(window.VANTA.BIRDS({
         el: vantaRef.current,
-        THREE,
+        THREE: window.THREE,
         backgroundColor: 0x0a0a0a,
         color1: 0xff6600,
         color2: 0x00aaff,
