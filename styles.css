@@ -8,14 +8,14 @@
 
 :root {
   --bg: #faf8f3;
-  --bg2: #f2ede3;
-  --ink: #1a1714;
-  --ink2: #3d3830;
-  --muted: #9a9080;
-  --accent: #c4501a;
-  --accent2: #3a6b5c;
+  --bg2: #2c2618;
+  --ink: #f0ece4;
+  --ink2: #c8bfb0;
+  --muted: #8a8272;
+  --accent: #e8713a;
+  --accent2: #5aab8c;
   --accent3: #d4a853;
-  --border: #ddd7c8;
+  --border: rgba(255, 255, 255, 0.15);
   --font-display: 'Playfair Display', serif;
   --font-body: 'Outfit', sans-serif;
   --font-italic: 'Cormorant Garamond', serif;
@@ -26,17 +26,33 @@ html {
 }
 
 body {
-  background: var(--bg);
+  background: transparent;
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 15px;
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none;
+  /* cursor: none; */
+}
+
+/* Vanta background */
+#app {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+nav,
+.about-strip,
+section,
+footer {
+  position: relative;
+  z-index: 1;
 }
 
 /* Cursor */
-.cursor-dot {
+/* .cursor-dot {
   position: fixed;
   width: 8px;
   height: 8px;
@@ -45,9 +61,9 @@ body {
   pointer-events: none;
   z-index: 9999;
   transform: translate(-50%, -50%);
-}
+} */
 
-.cursor-ring {
+/* .cursor-ring {
   position: fixed;
   width: 36px;
   height: 36px;
@@ -58,13 +74,13 @@ body {
   transform: translate(-50%, -50%);
   transition: width 0.3s, height 0.3s, opacity 0.3s;
   opacity: 0.5;
-}
+} */
 
-.cursor-ring.big {
-  width: 64px;
-  height: 64px;
-  opacity: 0.25;
-}
+/* .cursor-ring.big { */
+  /* width: 64px; */
+  /* height: 64px; */
+  /* opacity: 0.25; */
+/* } */
 
 ::-webkit-scrollbar {
   width: 4px;
@@ -265,7 +281,6 @@ nav {
   gap: 5rem;
   border-top: 1px solid var(--border);
   border-bottom: 1px solid var(--border);
-  background: var(--bg2);
 }
 
 .about-quote {
@@ -343,9 +358,6 @@ section {
 }
 
 /* Projects */
-#projects {
-  background: var(--bg);
-}
 
 .project-row {
   display: grid;
@@ -374,6 +386,10 @@ section {
 
 .project-row:hover::before {
   opacity: 1;
+}
+
+.project-row:hover {
+  cursor: pointer;
 }
 
 .project-row:hover .proj-title {
@@ -479,9 +495,6 @@ section {
 }
 
 /* Skills */
-#skills {
-  background: var(--bg2);
-}
 
 .skills-columns {
   display: grid;
@@ -530,9 +543,6 @@ section {
 }
 
 /* Experience */
-#experience {
-  background: var(--bg);
-}
 
 .exp-entry {
   display: grid;
@@ -593,8 +603,6 @@ section {
 
 /* Contact */
 #contact {
-  background: var(--ink);
-  color: var(--bg);
   padding: 7rem 4rem;
   position: relative;
   overflow: hidden;
@@ -709,7 +717,6 @@ section {
 }
 
 footer {
-  background: var(--ink);
   color: rgba(250, 248, 243, 0.3);
   padding: 1.5rem 4rem;
   display: flex;
