@@ -26,7 +26,10 @@ html {
 }
 
 body {
-  background: transparent;
+  background:
+    radial-gradient(circle at top left, rgba(232, 113, 58, 0.18), transparent 30%),
+    radial-gradient(circle at 80% 15%, rgba(90, 171, 140, 0.14), transparent 28%),
+    linear-gradient(180deg, #14110d 0%, #1c1811 42%, #0f0d0a 100%);
   color: var(--ink);
   font-family: var(--font-body);
   font-size: 15px;
@@ -162,6 +165,66 @@ nav {
   justify-content: flex-end;
   position: relative;
   overflow: hidden;
+}
+
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.hero-bg::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255, 255, 255, 0.08), transparent 22%),
+    radial-gradient(circle at 80% 25%, rgba(232, 113, 58, 0.16), transparent 24%),
+    radial-gradient(circle at 50% 80%, rgba(90, 171, 140, 0.12), transparent 26%);
+  opacity: 0.9;
+}
+
+.blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(24px);
+  opacity: 0.65;
+  mix-blend-mode: screen;
+  will-change: transform;
+}
+
+.blob-1 {
+  top: 12%;
+  left: 8%;
+  width: 22rem;
+  height: 22rem;
+  background: radial-gradient(circle at 35% 35%, rgba(232, 113, 58, 0.95), rgba(232, 113, 58, 0.05) 70%);
+  animation: drift1 16s ease-in-out infinite;
+}
+
+.blob-2 {
+  top: 18%;
+  right: 8%;
+  width: 18rem;
+  height: 18rem;
+  background: radial-gradient(circle at 35% 35%, rgba(90, 171, 140, 0.92), rgba(90, 171, 140, 0.04) 70%);
+  animation: drift2 19s ease-in-out infinite;
+}
+
+.blob-3 {
+  bottom: 10%;
+  left: 38%;
+  width: 16rem;
+  height: 16rem;
+  background: radial-gradient(circle at 35% 35%, rgba(212, 168, 83, 0.88), rgba(212, 168, 83, 0.04) 70%);
+  animation: drift1 22s ease-in-out infinite reverse;
+}
+
+#hero > :not(.hero-bg) {
+  position: relative;
+  z-index: 1;
 }
 
 @keyframes drift1 {
@@ -783,6 +846,25 @@ footer a:hover {
   transition-delay: 0.3s;
 }
 
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .blob {
+    animation: none;
+  }
+
+  .hero-overline,
+  .hero-name,
+  .hero-bottom,
+  .scroll-line,
+  .reveal {
+    animation: none;
+    transition: none;
+  }
+}
+
 @media (max-width: 900px) {
   nav {
     padding: 1.5rem 2rem;
@@ -800,6 +882,25 @@ footer a:hover {
 
   #hero {
     padding-bottom: 4rem;
+  }
+
+  .blob-1 {
+    width: 16rem;
+    height: 16rem;
+    top: 16%;
+    left: -3rem;
+  }
+
+  .blob-2 {
+    width: 13rem;
+    height: 13rem;
+    right: -2rem;
+  }
+
+  .blob-3 {
+    width: 11rem;
+    height: 11rem;
+    left: 32%;
   }
 
   .about-strip {
