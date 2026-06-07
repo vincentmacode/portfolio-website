@@ -6,12 +6,12 @@ function VantaBirds() {
 
   useEffect(() => {
     const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    const isSmallScreen = window.matchMedia('(max-width: 768px)').matches
 
-    if (prefersReducedMotion || isSmallScreen) {
+    if (prefersReducedMotion) {
       return undefined
     }
 
+    const isCoarsePointer = window.matchMedia('(pointer: coarse)').matches
     let vantaEffect = null
     let isCancelled = false
 
@@ -31,8 +31,8 @@ function VantaBirds() {
         backgroundColor: 0x0a0a0a,
         color1: 0xff6600,
         color2: 0x00aaff,
-        birdSize: 1.5,
-        quantity: 3,
+        birdSize: isCoarsePointer ? 1 : 1.5,
+        quantity: isCoarsePointer ? 2 : 3,
       })
     })()
 
