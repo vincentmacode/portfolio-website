@@ -32,7 +32,7 @@ function VantaBirds() {
         color1: 0xff6600,
         color2: 0x00aaff,
         birdSize: isCoarsePointer ? 1 : 1.5,
-        quantity: isCoarsePointer ? 2 : 3,
+        quantity: isCoarsePointer ? 3 : 4,
       })
     })()
 
