@@ -15,6 +15,18 @@ function VantaBirds() {
     let vantaEffect = null
     let isCancelled = false
 
+    const el = vantaRef.current
+    const forwardTouch = (e) => {
+      const touch = e.touches[0]
+      if (!touch) return
+      el.dispatchEvent(new MouseEvent('mousemove', {
+        bubbles: true,
+        clientX: touch.clientX,
+        clientY: touch.clientY,
+      }))
+    }
+    el.addEventListener('touchmove', forwardTouch, { passive: true })
+
     void (async () => {
       const [THREE] = await Promise.all([
         import('three'),
@@ -33,11 +45,13 @@ function VantaBirds() {
         color2: 0x00aaff,
         birdSize: isCoarsePointer ? 1 : 1.5,
         quantity: isCoarsePointer ? 3 : 4,
+        touchControls: true,
       })
     })()
 
     return () => {
       isCancelled = true
+      el.removeEventListener('touchmove', forwardTouch)
 
       if (vantaEffect) {
         vantaEffect.destroy()
