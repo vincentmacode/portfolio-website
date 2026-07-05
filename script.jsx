@@ -24,7 +24,7 @@ function VantaBirds() {
     }
   }, [vantaEffect])
 
-  return <div ref={vantaRef} style={{ width: '100%', height: '100%' }} />
+  return <div ref={vantaRef} className="vanta-bg" />
 }
 
 createRoot(document.getElementById('app')).render(<VantaBirds />)
