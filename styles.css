@@ -43,6 +43,12 @@ body {
   pointer-events: none;
 }
 
+.vanta-bg {
+  width: 100%;
+  height: 100vh;
+  height: 100lvh;
+}
+
 nav,
 .about-strip,
 section,
