@@ -16,7 +16,11 @@ function VantaBirds() {
         color1: 0xff6600,
         color2: 0x00aaff,
         birdSize: 1.5,
-        quantity: 3
+        quantity: 4,
+        minHeight: 200.00,
+        minWidth: 200.00,
+        scale: 1.00,
+        scaleMobile: 1.00
       }))
     }
     return () => {
