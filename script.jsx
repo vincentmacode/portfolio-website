@@ -40,4 +40,9 @@ const obs = new IntersectionObserver(entries => {
 document.querySelectorAll('.reveal').forEach(el => obs.observe(el))
 
 // Footer copyright update
-document.getElementById('copyright').textContent = `© ${new Date().getFullYear()} Vincent Ma`
+const now = new Date()
+document.getElementById('copyright').textContent = `© ${now.getFullYear()} Vincent Ma`
+
+// Update the "Available" field in the About section to show the current quarter and year
+const quarter = Math.floor(now.getMonth() / 3) + 1
+document.getElementById('quarter').textContent = `Q${quarter} ${now.getFullYear()}`
